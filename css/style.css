@@ -1,0 +1,420 @@
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+* {
+    /*Remove padding and margin. (headers)*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.clearfix {zoom: 1;}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.navbar {
+    color: #fff;
+    font-size: calc(18px + 0.25vw);
+}
+
+.navbar div {
+    display: none;
+}
+
+.navbar .toggle,
+.navbar .brand {
+    display: inline-block;
+}
+
+.navbar .link {
+    display: block;
+    text-align: center;
+    align-items: center;
+    padding: 1em;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.navbar .link:hover,
+.navbar .link:active {
+    color: #e67e22;
+    
+}
+
+.navbar .brand {
+    color: #fff;
+    font-size: calc(18px + 0.5vw);
+    padding-top: 40px;
+    padding-left: 25px;
+    text-decoration: none;
+}
+
+
+
+.navbar .toggle {
+    padding: 1em;
+    color: #fff;
+}
+/*DESKTOP VIEW*/
+@media (min-width: 48em) {
+    .navbar {
+        display: flex;
+    }
+
+    .navbar div {
+        display: flex;
+    }
+    .navbar .left,
+    .navbar .right {
+        display: flex;
+        flex: 1;
+    }
+
+    .navbar .link {
+        width: auto;
+        padding-top: 40px;
+        padding-left: 25px;
+    }
+    .navbar .right {
+        justify-content: flex-end;
+    }
+    .navbar .toggle {
+        display: none;
+    }
+}
+/* SMARTPHONES*/
+@media (max-width: 48em) {
+    .navbar.active .toggle {
+        color: #fff;
+    }
+
+    .navbar .brand {
+        text-align: left;
+    }
+
+    .navbar.active div {
+        display: block;
+        
+ 
+    }
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 30px;
+    margin: 60px;
+    text-align: center;
+    justify-content: center;
+}
+
+.wrapper h3 {
+    font-size: calc(18px + 0.5vw);
+}
+
+.wrapper p {
+    font-size: calc(16px + 0.5vw);
+}
+
+.first-section h2 {
+    margin: 20px;
+    margin-top: 30px;
+
+}
+.first-section p {
+    margin: 20px;
+    font-size: calc(20px + 0.5vw);
+
+}
+
+.long-copy {
+    text-align: center;
+}
+
+
+
+/* ----------------------------------------------- */
+/* HEADER */
+/* ----------------------------------------------- */
+
+header {
+    /* Dim the background photo, and have it fixed for scroll effect*/
+    /* display: flex; */
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/travel.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/travel.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+header #branding {
+    color: #fff;
+    float: left;
+    padding-top: 40px;
+    padding-left: 25px;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* ----- HEADINGS ----- */
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* ----- ICONS ----- */
+.icon-big {
+    /*For CC Plane Phone and Shopping cart icons*/
+    font-size: 350%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------------------- */
+/* Pictures */
+/* ----------------------------------------------- */
+
+.section-pics-wrapper {
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+  
+}
+
+.picture-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+}
+
+.section-pics-wrapper ul li {
+    list-style: none;
+}
+
+.travel-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.travel-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.travel-photo img:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+
+.traveled-to-wrapper {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/deals.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/deals.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: auto;
+}
+.traveled-to-wrapper h2{
+    margin-top: 60px;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 30px;
+    margin:30px;
+    text-align: center;
+    justify-content: center;
+}
+
+.places-grid h3 {
+    font-size: calc(24px + 0.5vw);
+}
+
+.places-grid p {
+    font-size: calc(20px + 0.5vw);
+}
+.travel-to-section {
+    text-align: center;
+}
+.travel-section h2 {
+    color: #fff;
+    
+}
+.places h3 {
+    text-align: center;
+    color: #e67e22;
+}
+
+.places p {
+    text-align: center;
+    color: #fff;
+}
+
+.places {
+    margin-top: 60px;
+
+}
+
+/* ----------------------------------------------- */
+/* FOOTER */
+/* ----------------------------------------------- */
+
+footer {
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited, 
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+    float: right;
+}
+
+.ion-social-facebook:hover {
+    color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+    color: #00aced;
+}
+
+.ion-social-googleplus:hover {
+    color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+    color: #517fa4;
+}
+
+
+footer p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
